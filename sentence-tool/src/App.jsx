@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
+import Home from './components/Home'
+import Test from './components/Test'
 
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home/>,
+  },
+  {
+    path:"/test",
+    element: <Test/>
+  }
+])
 function App() {
-  
-
   return (
     <>
-      <h1 className='text-yellow-500'>Hello World!</h1>
+      <RouterProvider router={appRouter}/>
     </>
   )
 }
